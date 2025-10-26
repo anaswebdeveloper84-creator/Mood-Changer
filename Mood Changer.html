@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood Changer</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      margin-top: 60px;
+      background-color: #87b7bc;
+      transition: background-color 0.5s;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 150px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #1976d2;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Mood Changer</h2>
+  <p>Enter your current mood and your favorite color:</p>
+
+  <input type="text" id="mood" placeholder="Happy / Tired / Excited">
+  <input type="text" id="color" placeholder="e.g. pink or #ff4081"><br>
+  
+  <button onclick="changeMood(document.getElementById('mood').value, document.getElementById('color').value)">Change Mood</button>
+
+  <h3 id="message"></h3>
+
+  <script>
+    // Function with two parameters, no return
+    function changeMood(mood, color) {
+      document.body.style.backgroundColor = color;
+      document.getElementById("message").innerText = "You are feeling " + mood + "! ";
+    }
+  </script>
+</body>
+</html>
